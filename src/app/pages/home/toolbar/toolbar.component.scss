@@ -1,0 +1,17 @@
+.tool-bar{
+    display: block;
+    padding: 10px 10px 10px 20px;
+    background: url(../../../../assets/images/homebar.png) no-repeat;
+    background-size: 100%;
+    color: white;
+    font-size: 12px;
+
+    i{
+        display: block;
+        font-style: normal;
+        padding-top: 3px;
+    }
+}
+.tool-bar-item{
+    border-bottom: solid 5px #f7f7f7;
+}

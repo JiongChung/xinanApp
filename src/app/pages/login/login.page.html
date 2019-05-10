@@ -1,0 +1,32 @@
+<ion-content class="bgcolor">
+    <ion-grid padding="10">
+        <ion-row>
+            <ion-col size="12">
+                <h4>{{title}}</h4>
+            </ion-col>
+            <ion-col size="12">
+                <form [formGroup]="loginForm" novalidate (ngSubmit)="save()" autocomplete="off">
+                    <ion-item class="change-item">
+                        <ion-input type="number" formControlName="phone" [(ngModel)]="phone" placeholder="请输入手机号码"></ion-input>
+                    </ion-item>
+                    <ion-item class="change-item" [hidden]="!isPasswordLogin">
+                        <ion-input formControlName="password" [(ngModel)]="password"  placeholder="请输入密码" type="password"></ion-input>
+                    </ion-item>
+                    <ion-item class="change-item" [hidden]="isPasswordLogin">
+                        <ion-input formControlName="phoneCode" [(ngModel)]="phoneCode" placeholder="请输入验证码" type="number"></ion-input>
+                        <ion-button fill="outline" color="basecolor" (click)="getCode()" [disabled]="isGetPhoneCodeing">
+                            {{phoneCodeText}}
+                        </ion-button>
+                    </ion-item>
+                    <ion-button expand="block" color="basecolor" type="submit" class="btn" [disabled]="loginForm.invalid">
+                        登录
+                    </ion-button>
+                    
+                </form>
+                <ion-button expand="block" class="none-color" fill="outline" (click)="changeLoginType()">
+                        {{changeText}}
+                    </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

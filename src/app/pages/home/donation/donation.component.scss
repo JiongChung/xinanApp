@@ -1,0 +1,53 @@
+
+.donation-list-item{
+    border-bottom: solid 1px #eee;
+}
+.donation-list-item:last-child{
+    border-bottom: none;
+}
+.donation-list{
+    padding: 0 0 0 90px;
+    position: relative;
+    min-height: 80px;
+
+    .img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-content: center;
+        align-items: center;
+
+        img{
+            max-height: 80px;
+            display: block;
+        }
+    }
+
+    .title{
+        display: block;
+        font-size: 16px;
+    }
+
+    .info{
+        line-height: 1.5;
+        color: #999;
+        display: block;
+        font-size: 12px;
+        text-align: justify;
+    }
+
+    .tags{
+        display: block;
+        color: #3598dc;
+        font-size: 12px;
+    }
+    .btn{
+        display: block;
+        margin-left: -90px;
+        margin-right: 0;
+        padding-top: 5px;
+    }
+}

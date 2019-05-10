@@ -1,5 +1,7 @@
 {
   "name": "xinan",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

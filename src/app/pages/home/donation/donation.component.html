@@ -1,0 +1,19 @@
+<ion-grid class="donation-list-item" *ngFor="let item of donationList">
+    <ion-row>
+        <ion-col size="12">
+            <div class="donation-list">
+                <span class="img">
+                    <img [src]="item.logoUrl" alt="">
+                </span>
+                <span class="title">{{item.title}}</span>
+                <span class="info" [innerHTML]="item.content"></span>
+                <span class="tags">{{item.highLightContent}}</span>
+                <span class="btn">
+                    <ion-button fill="outline" color="secondary" size="small" expand="block" (click)="login()">
+                        {{item.buttonString}}
+                    </ion-button>
+                </span>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-grid>

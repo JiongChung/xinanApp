@@ -1,0 +1,8 @@
+<ion-slides [pager]="showSlideBar" [options]="slideOpts" #slides (ionSlideTouchEnd)="slideDidChange()">
+    <ion-slide *ngFor="let item of homeSlides">
+        <img [src]="item.picture" alt="">
+    </ion-slide>
+    <ion-slide *ngIf="homeSlides.length == 0">
+        <div style="height:120px;background:#eaeaea;width: 100%"></div>
+    </ion-slide>
+</ion-slides>
