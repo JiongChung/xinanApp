@@ -10,12 +10,12 @@ export class StorageService {
         public storage: Storage
     ) { }
 
-    async get(key: string, type?: string){
-        return this.storage.get(key).then(value => {
+    async getStorage(key: string, type?: string): Promise<any>{
+        let result = await this.storage.get(key).then((value: any) => {
             return (type == 'json') ? JSON.parse(value) : value;
-        }).catch(() => {
-            return null
-        });
+        }); 
+
+        return result;
     }
 
 
@@ -26,4 +26,6 @@ export class StorageService {
     delete(key: any){
         return this.storage.remove(key);
     }
+
+     
 }

@@ -41,7 +41,7 @@ export class HomePage implements OnInit {
     }
 
     async getName(){
-        let name = await this.storage.get('sdsd');
+        let name = await this.storage.getStorage('sdsd');
         console.log(name)
     }
     
@@ -52,7 +52,7 @@ export class HomePage implements OnInit {
     }
 
     async getUserInfo(){
-        let user = await this.storage.get('user','json');
+        let user = await this.storage.getStorage('user','json');
         console.log(user)
     }
 

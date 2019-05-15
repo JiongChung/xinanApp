@@ -17,20 +17,20 @@ const routes: Routes = [
                 ]
             },
             {
-                path: 'mall',
+                path: 'notice',
                 children: [
                     {
                         path: '',
-                        loadChildren: '../pages/mall/mall.module#MallPageModule'
+                        loadChildren: '../pages/notice/notice.module#NoticePageModule'
                     }
                 ]
             },
             {
-                path: 'find',
+                path: 'invite',
                 children: [
                     {
                         path: '',
-                        loadChildren: '../pages/find/find.module#FindPageModule'
+                        loadChildren: '../pages/invite/invite.module#InvitePageModule'
                     }
                 ]
             },

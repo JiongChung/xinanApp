@@ -79,7 +79,10 @@
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-sqlite-storage": {}
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-wechat": {
+        "WECHATAPPID": "wx28a66e8b774bd3f2"
+      }
     },
     "platforms": [
       "android"

@@ -7,7 +7,7 @@ import { Component, OnInit, ViewChild, Input, OnChanges } from '@angular/core';
 })
 export class SlidesComponent implements OnInit,OnChanges {
     @ViewChild('slides') slides: any;
-    @Input() homeSlides: Array<any>;
+    @Input() slidesList: Array<any>;
 
     showSlideBar: boolean = false;
     slideOpts: any = {
@@ -25,7 +25,7 @@ export class SlidesComponent implements OnInit,OnChanges {
     }
 
     ngOnChanges(){
-        this.showSlideBar = (this.homeSlides.length > 1) ? true : false;
+        this.showSlideBar = (this.slidesList.length > 1) ? true : false;
         this.slideOpts.loop = this.showSlideBar;
     }
 

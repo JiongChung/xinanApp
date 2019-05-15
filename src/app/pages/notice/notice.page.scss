@@ -1,0 +1,60 @@
+.title{
+    font-size: 16px;
+    padding: 0 15px;
+}
+
+.memberlist{
+   
+    overflow-y: hidden;
+    overflow-x: auto;
+    margin: 0 10px;
+    padding-bottom: 10px;
+
+    ul{
+        padding: 5px;
+    }
+
+    li{
+        margin: 0 10px 0 0;
+        float: left;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        border-radius: 3px;
+        padding: 10px;
+
+        .name{
+            font-size: 16px;
+            padding: 0;
+            margin: 0;
+        }
+        .tags{
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tools{
+            display: flex;
+            padding-top: 10px;
+
+            .tools-item{
+                flex: 1;
+
+                .list{
+                    display: block;
+                    font-size: 12px;
+                    padding-bottom: 5px;
+
+                    b{
+                        font-size: 14px;
+                    }
+                }
+                .list:last-child{
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+    li:last-child{
+        margin-right: 0
+    }
+}

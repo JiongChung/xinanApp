@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="common-title">公示</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <app-slides [slidesList]="slidesList"></app-slides>
+    <h4 class="title">获得互助金的会员</h4>
+    <div class="memberlist">
+        <ul [ngStyle]="{'width': scrollWdith}">
+            <li [ngStyle]="{'width': itemWdith}" *ngFor="let item of aidMembers">
+                <h4 class="name">{{item.name}}</h4>
+                <span class="tags">心安大病救助公益基金</span>
+                <div class="tools">
+                    <div class="tools-item">
+                        <span class="list">
+                            <b>{{item.shareAmount}}</b>元
+                        </span>
+                        <span class="list">
+                            加手互助分摊
+                        </span>
+                    </div>
+                    <div class="tools-item">
+                        <span class="list">
+                            <b>{{item.aidAmount}}</b>万元
+                        </span>
+                        <span class="list">
+                            患病后获助金
+                        </span>
+                    </div>
+                    <div class="tools-item">
+                        <span class="list">
+                            <b>{{item.aidDate}}</b>
+                        </span>
+                        <span class="list">
+                            救助日期
+                        </span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <ion-img [src]="detailImageUrl"></ion-img>
+</ion-content>

@@ -83,3 +83,12 @@
     --ion-color-shade: #ce0609;
     --ion-color-tint: #df0e11;
 }
+
+.ion-color-basegradient {
+    --ion-color-base: -webkit-linear-gradient(0deg, #fd7f80, #e94b4c);
+    --ion-color-base-rgb: 232,44,44;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255,255,255;
+    --ion-color-shade: #ce0609;
+    --ion-color-tint: #df0e11;
+}

@@ -61,9 +61,9 @@ export class LoginPage extends AppComponentBase implements OnInit {
         }
         
         this.api.authenticate(input).subscribe((data: any) => {
-            console.log(data)
             if(data.success){
                 this.storage.save('user', data.result, 'json');
+                this.commonService.setCookie('user',JSON.stringify(data.result));
                 this.nav.pop().then(()=>{
                     this.events.publish('reloadPage');
                 });

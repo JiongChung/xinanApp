@@ -5,9 +5,13 @@ ul,li{list-style: none;margin: 0;padding: 0}
     // padding-inline-start: 15px;
     // -webkit-padding-end: 15px;
     // padding-inline-end: 15px;
-    font-size: 1.6rem;
 }
 p{
     padding: 0;
     margin: 0;
+}
+.common-gradient-bg{
+    background: linear-gradient(to right,#fd7f80, #e94b4c);
+    background-image: -webkit-linear-gradient(0deg, #fd7f80, #e94b4c);
+    color: white;
 }
