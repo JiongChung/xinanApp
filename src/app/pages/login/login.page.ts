@@ -1,8 +1,6 @@
-import { Component, OnInit, Injector } from '@angular/core';
-import { AppComponentBase } from '../../common/app-component-base';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Events } from '@ionic/angular';
-import { NavController } from '@ionic/angular';
+import { Events, NavController } from '@ionic/angular';
 import { CommonService } from '../../service/common.service';
 import { ApiService } from '../../service/api.service';
 import { StorageService } from '../../service/storage.service';
@@ -12,7 +10,7 @@ import { StorageService } from '../../service/storage.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage extends AppComponentBase implements OnInit {
+export class LoginPage  implements OnInit {
     loginForm: FormGroup;
     phone: string = '';
     phoneCode: number = null;
@@ -26,7 +24,6 @@ export class LoginPage extends AppComponentBase implements OnInit {
     isGetPhoneCodeing: boolean = false;
 
     constructor(
-        injector: Injector,
         public fb: FormBuilder,
         private events: Events,
         public commonService: CommonService,
@@ -34,7 +31,6 @@ export class LoginPage extends AppComponentBase implements OnInit {
         public nav: NavController,
         public storage: StorageService
     ) { 
-        super(injector);
     }
 
     ngOnInit() {
@@ -42,7 +38,7 @@ export class LoginPage extends AppComponentBase implements OnInit {
         this.changeText = '验证码登录';
         this.phoneCodeText = '获取验证码';
         this.resetValue();
-        this.createForm();
+        this.createForm();   
     }
 
     createForm(){
@@ -60,15 +56,15 @@ export class LoginPage extends AppComponentBase implements OnInit {
             input.password = this.password;
         }
         
-        this.api.authenticate(input).subscribe((data: any) => {
-            if(data.success){
+        this.api.authenticate(input).then((data: any) => {
+            if(typeof(data) == 'object' && data.success){
                 this.storage.save('user', data.result, 'json');
-                this.commonService.setCookie('user',JSON.stringify(data.result));
+                this.commonService.setCookie('Abp.AuthToken',data.result.accessToken);
                 this.nav.pop().then(()=>{
                     this.events.publish('reloadPage');
                 });
             }
-        });
+        }).catch((err: any) => console.log(344444));
         // console.log(this.loginForm.value);
     }
 

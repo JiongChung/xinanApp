@@ -32,16 +32,19 @@ export class AccountPage implements OnInit {
         //     this.name = '某某的权益';
         //     this.tags = '1位成员';
         // }, 2000);
-        this.api.getMyProfile().subscribe((data: any) => {
-            this.userInfo.nickName = data.result.nickName;
-            this.userInfo.numberOfMember = data.result.numberOfMember;
-            this.userInfo.profileLogoUrl = data.result.profileLogoUrl;
-            this.avatar = 'http://f-dev.huiaichina.com/app/module/xinan.png';
-            this.tags = '1位成员';
-            this.isLoadHeadComplete = true;
-            this.name = '某某的权益';
+        this.api.getMyProfile().then((data: any) => {
+            if(typeof(data) == 'object' && data.success){
+                this.userInfo.nickName = data.result.nickName;
+                this.userInfo.numberOfMember = data.result.numberOfMember;
+                this.userInfo.profileLogoUrl = data.result.profileLogoUrl;
+                this.avatar = 'http://f-dev.huiaichina.com/app/module/xinan.png';
+                this.tags = '1位成员';
+                this.isLoadHeadComplete = true;
+                this.name = '某某的权益';
+            }
         },(err: any) => {
-            console.log(err.error.error.message)
+            console.log(err)
+            // console.log(err.error.error.message)
         });
     }
 
@@ -54,5 +57,6 @@ export class AccountPage implements OnInit {
     }
 
     call(){
+        document.location.href="tel:13430386194"
     }
 }

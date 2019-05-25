@@ -29,11 +29,15 @@ export class InvitePage implements OnInit {
     ) { }
 
     ngOnInit() {
+        
+    }
+
+    ionViewDidEnter(){
         this.getInviteShare();
     }
 
     getInviteShare(){
-        this.api.getInviteShare().subscribe((data: any) => {
+        this.api.getInviteShare().then((data: any) => {
             this.imageUrl = data.result.imageUrl;
         })
     }
